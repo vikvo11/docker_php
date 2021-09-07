@@ -29,3 +29,16 @@ gcloud container clusters create vikvo11 --zone=europe-central2-a
 gcloud container clusters create vikvo11 --zone=europe-central2-a --num-nodes=3
 
 gcloud container clusters get-credentials vikvo11 --zone=europe-central2-a
+
+gcloud container clusters delete vikvo11 --zone=europe-central2-a
+
+***
+#kubectl run hello --generator=run-pod/v1 --image=vikvo11/k8sphp:latest --port=80
+kubectl run hello --image=vikvo11/k8sphp:latest --port=80
+
+kubectl exec hello -- date
+kubectl exec -it hello 
+
+kubectl logs hello
+kubectl port-forward hello 7788:80
+
