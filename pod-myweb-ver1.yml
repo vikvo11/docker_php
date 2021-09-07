@@ -1,0 +1,8 @@
+apiVersion : v1
+kind: Pod
+metadata:
+ name: my-web
+spec:
+ containers:
+  - name: container-apache
+    image: vikvo11/k8sphp:latest
