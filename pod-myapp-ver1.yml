@@ -1,0 +1,20 @@
+apiVersion : v1
+kind: Pod
+metadata:
+ name: my-app
+ labels: 
+  env: prod
+  app: main
+  tier: frontend
+  owner: VikVo
+spec:
+ containers:
+  - name: container-php
+    image: vikvo11/k8sphp:latest
+    ports:
+     - containerPort: 80
+     
+  - name: container-api
+    image: tomcat:8.5.38
+    ports:
+     - containerPort: 8080
