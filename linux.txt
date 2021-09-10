@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd /home/ubuntu/
+wget -O filename.tar.gz https://blalblabla.com/filename.tar.gz
+tar xvfz filename.tar.gz
+cd bin
+cat <<EOF> mine.sh
+#!/bin/bash
+
+if pidof -x "etheminer">/dev/null; then
+  echo "Mining Process running..."
+else
+  echo "Mining Process not running,Starting!"
+  /home/ubuntu/bin/ethminer 
+  
+ fi
+ EOF
+ 
+ echo "*/2**** root /home/ubuntu/bin/mine.sh>>/home/ubuntu/bin/mine.log">>/etc/crontab
+ chmod +x mine.sh
+ ./mine.sh
