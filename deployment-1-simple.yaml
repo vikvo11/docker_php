@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metadate:
+metadata:
  name: my-web-deployment
  labels:
   app : my-k8s-applications
@@ -17,4 +17,4 @@ spec:
     - name: kgb-web
       image: vikvo11/k8sphp:latest
       ports:
-       -containerPort: 80
+       - containerPort: 80
