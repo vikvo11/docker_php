@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadate:
- name:my-web-deployment
+ name: my-web-deployment
  labels:
   app : my-k8s-applications
 spec:
