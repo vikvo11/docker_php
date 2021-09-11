@@ -50,3 +50,32 @@ kubectl port-forward hello 7788:80
 
 #### Deployment
 
+kubectl create deployment vikvo-deployment --image=vikvo11/k8sphp:latest
+kubectl describe pods vikvo-deployment-747d5df774-b8c8m
+
+kubectl describe deploy vikvo-deployment
+
+kubectl scale deployment vikvo-deployment --replicas 4
+kubectl get deploy
+
+kubectl get rs # replica set
+
+kubectl delete pods vikvo-deployment-747d5df774-xzxtv
+
+kubectl autoscale deployment vikvo-deployment --min=4 --max=6 --cpu-percent=80
+#hpa - horizontal pod autoscale
+kubectl get hpa
+
+#### update
+kubectl rollout history deployment/vikvo-deployment
+kubectl rollout status deployment/vikvo-deployment
+
+kubectl set image deployment/vikvo-deployment k8sphp=adv4000/k8sphp:version1 --record
+#rollback to 1 version before
+kubectl rollout undo deployment/vikvo-deployment
+#
+kubectl rollout undo deployment/vikvo-deployment --to-revision=4
+
+kubectl rollout restart deployment/vikvo-deployment
+
+####Manifest for deployment
