@@ -39,6 +39,14 @@ kubectl run hello --image=vikvo11/k8sphp:latest --port=80
 kubectl exec hello -- date
 kubectl exec -it hello 
 
+kubectl exec -it my-web bash
+kubectl exec -it my-web date
+
+kubectl apply -f myfile.yml  ## apply manifest file
+kubectl delete -f myfile.yml
+
 kubectl logs hello
 kubectl port-forward hello 7788:80
+
+#### Deployment
 
