@@ -79,3 +79,8 @@ kubectl rollout undo deployment/vikvo-deployment --to-revision=4
 kubectl rollout restart deployment/vikvo-deployment
 
 ####Manifest for deployment
+kubectl apply -f deploy-1-simple.yaml
+
+kubectl delete deployment --all
+kubectl delete hpa --all
+kubectl delete rs --all
