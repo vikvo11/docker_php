@@ -23,7 +23,7 @@ spec:
         - name: not-my-web
           image: tomcat:8.5.38
           ports:
-            - contrainerPort: 8080 # port on POD
+            - containerPort: 8080 # port on POD
         
 ---
 apiVersion: v1
