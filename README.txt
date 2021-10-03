@@ -84,3 +84,23 @@ kubectl apply -f deploy-1-simple.yaml
 kubectl delete deployment --all
 kubectl delete hpa --all
 kubectl delete rs --all
+
+#Services
+--ClusterIP
+ kubectl create deployment vikvo-deployment --image vikvo11/k8sphp:latest
+ kubectl scale deployment vikvo-deployment --replicas 3
+ kubectl expose deployment vikvo-deployment --type=ClusterIP --port 80
+ kubectl get service /kubectl get svc
+ >> SSH to node -> curl 10.3.247.251
+ kubectl delete service vikvo-deployment
+ --NodePort
+ kubectl expose deployment vikvo-deployment --type=NodePort --port 80
+ kubectl get service
+ kubectl describe nodes |grep ExternalIP
+ gcloud compute instances list
+ --FIREWALL!!!
+ gcloud compute firewall-rules create myservice --allow tcp:31045
+ 
+ 
+ 
+ 
