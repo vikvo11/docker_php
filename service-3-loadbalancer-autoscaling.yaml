@@ -14,7 +14,7 @@ spec:
       labels:
         project: xyz
     spec:
-      container:
+      containers:
         - name: xyz-web
           image: vikvo11/k8sphp:latest
           ports:
