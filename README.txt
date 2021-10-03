@@ -109,3 +109,6 @@ kubectl delete rs --all
  kubectl delete deployment vikvo-deployment
  kubectl get pods
  
+ kubectl apply -f service-1-loadbalancer-single.yaml
+ 
+ kubectl delete -f service-1-loadbalancer-single.yaml
