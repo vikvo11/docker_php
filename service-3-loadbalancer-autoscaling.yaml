@@ -47,14 +47,14 @@ kind: Service
 metadata:
   name: my-autoscaling-pod-service
   labels:
-    env: prod
-    owner: vikvo
+     env  : prod
+     owner: DenisAstahov
 spec:
   selector:
-    project: xyz
+    project: xyz      # Selecting PODs with those Labels
   ports:
-    - name: app-listener
-    protocol: TCP
-    port: 80
-    targetPort: 80
+    - name      : app-listener
+      protocol  : TCP
+      port      : 80  # Port on Load Balancer
+      targetPort: 80  # Port on Pod
   type: LoadBalancer
