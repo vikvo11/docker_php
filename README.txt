@@ -15,6 +15,7 @@ kubectl run hello --generator=run-pod/v1 --image=vikvo11/k8sphp:latest --port=80
 kubectl describe pods hello1
 kubectl delete pods hello
 
+---GKE Google Kubernetes Engine
 
 # google \https://cloud.google.com/sdk/docs/install#linux
 # https://console.cloud.google.com/kubernetes/list?organizationId=0&project=stately-avatar-325318
@@ -101,6 +102,10 @@ kubectl delete rs --all
  --FIREWALL!!!
  gcloud compute firewall-rules create myservice --allow tcp:31045
  
- 
- 
+ kubectl delete svc vikvo-deployment
+ --LoadBalancer
+ kubectl expose deployment vikvo-deployment --type=LoadBalancer --port 80
+ kubectl delete svc vikvo-deployment
+ kubectl delete deployment vikvo-deployment
+ kubectl get pods
  
